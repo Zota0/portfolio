@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <template id="project-show-template-public-src">
+        <div class="project">
+            <img src alt>
+            <h3></h3>
+            <p></p>
+            <a href>Source Code</a>
+            <a href>Demo</a>
+        </div>
+    </template>
+
+    <template id="project-show-template-closed-src">
+        <div class="project">
+            <img src alt>
+            <h3></h3>
+            <p></p>
+            <a disabled>Source Code</a>
+            <p>This project is closed source.</p>
+            <a href>Demo</a>
+        </div>
+    </template>
+
+    <template id="project-show-template-public-doc">
+        <div class="project">
+            <img src alt>
+            <h3></h3>
+            <p></p>
+            <a href>Documentation</a>
+            <a href>Demo</a>
+        </div>
+    </template>
+
+    <header>
+        <div class="fill"></div>
+        <nav>
+            <h1>Zota0</h1>
+            <ul>
+                <li><a href="#who">Who am I?</a></li>
+                <li><a href="#life_road">Life Road</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="./blog/index.html">Blog</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="who">
+            <h2>Who am I?</h2>
+            <p>
+                I'm a developer from Poland.
+                Interested in everything related to development, from web applications
+                to embedded, mobile and desktop software, including games.
+                <a href="#projects">See My Projects</a>, 
+                <a href="#skills">My Skills</a> or you can also
+                read my <a href="./blog/index.html">Blog</a>.
+            </p>
+        </section>
+
+        <section id="life_road">
+            <h2>Life Road</h2>
+            <canvas id="timeline" width="100%" height="400"></canvas>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <div>
+                <project
+                    type="private-src"
+                    src="images/projects/pe"
+                    title="pe"
+                    desc="pe is a simple, fast and lightweight PE file parser written in C."
+                    demo="https://zota0.github.io/pe/"
+                ></project>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            
+            <details open>
+                <summary>Programming Languages</summary>
+                <ul>
+                    <li>C</li>
+                    <li>Odin</li>
+                    <li>Go</li>
+                    <li>C++</li>
+                    <li>C#</li>
+                    <li>JavaScript (Typescript)</li>
+                    <li>Kotlin</li>
+                    <li>Java</li>
+                </ul>
+            </details>
+
+            <details open>
+                <summary>Shading Languages</summary>
+                <ul>
+                    <li>HLSL</li>
+                    <li>GLSL</li>
+                </ul>
+            </details>
+
+            <details open>
+                <summary>Frameworks (And meta-frameworks)</summary>
+                <ul>
+                    <li>Kotlin Multiplatform</li>
+                    <li>Nuxt.js</li>
+                    <li>Next.js</li>
+                    <li>SvelteKit</li>
+                    <li>TanStack Start</li>
+                </ul>
+            </details>
+
+            <details open>
+                <summary>Game Engines</summary>
+                <ul>
+                    <li>Godot</li>
+                </ul>
+            </details>
+
+            <details open>
+                <summary>Operating Systems</summary>
+                <ul>
+                    <li>Windows</li>
+                    <li>Linux (beginner, archlinux|ubuntu|)</li>
+                </ul>
+            </details>
+
+            <details open>
+                <summary>Databases</summary>
+                <ul>
+                    <li>MongoDB</li>
+                    <li>MySQL</li>
+                    <li>PostgreSQL</li>
+                </ul>
+            </details>
+
+            <details open>
+                <summary>Mobile</summary>
+                <ul>
+                    <li>React Native</li>
+                    <li>Kotlin Multiplatform</li>
+                    <li>.NET MAUI</li>
+                </ul>
+            </details>
+
+            <details open>
+                <summary>Scripting Languages</summary>
+                <ul>
+                    <li>Lua</li>
+                </ul>
+            </details>
+
+            <details open>
+                <summary>Tools</summary>
+                <ul>
+                    <details open>
+                        <summary>Git</summary>
+                        <ul>
+                            <li>Git</li>
+                            <li>GitHub</li>
+                        </ul>
+                    </details>
+
+                    <details open>
+                        <summary>Text Editors and IDEs</summary>
+                        <ul>
+                            <li>VS Code</li>
+                            <li>Intellij IDEA</li>
+                            <li>Android Studio</li>
+                            <li>Visual Studio (ONLY FOR MSVC and C#)</li>
+                            <li>CLion</li>
+                            <li>NeoVim</li>
+                        </ul>
+                    </details>
+
+                    <details open>
+                        <summary>Graphical Editors</summary>
+                        <ul>
+                            <li>Blender</li>
+                            <li>Inkscape</li>
+                            <li>Krita</li>
+                        </ul>
+                    </details>
+
+                    <details open>
+                        <summary>Build Systems</summary>
+                        <ul>
+                            <li>CMake</li>
+                            <li>Gradle</li>
+                        </ul>
+                    </details>
+
+                    <details open>
+                        <summary>CI/CD</summary>
+                        <ul>
+                            <li>Docker</li>
+                            <li>Kubernetes</li>
+                        </ul>
+                    </details>
+                </ul>
+            </details>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+        </section>
+    </main>
+
+    <footer>
+        <hr>
+        <div>
+            <ul>
+                <li><a href="https://twitter.com/Zota0">Twitter</a></li>
+                <li><a href="https://github.com/Zota0">GitHub</a></li>
+                <li><a href="https://www.linkedin.com/in/zota0/">LinkedIn</a></li>
+            </ul>
+            <ul>
+                <li><a href="#who">Who am I?</a></li>
+                <li><a href="#life_road">Life Road</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="./blog/index.html">Blog</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+        <script>
+            document.writeln(`<p>© ${new Date().getFullYear()} Zota0</p>`);
+        </script>
+    </footer>
+</body>
+</html>
