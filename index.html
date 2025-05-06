@@ -5,6 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js" integrity="sha512-b+nQTCdtTBIRIbraqNEwsjB6UvL3UEMkXnhzd8awtCYh0Kcsjl9uEgwVFVbhoj3uu1DO1ZMacNvLoyJJiNfcvg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="custom-elements.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (eventDomContentLoaded) => {
+            const header = document.querySelector('header');
+
+            header.style.opacity = 1;
+
+            let lastSy = Number(window.scrollY) || 0;
+            window.addEventListener('scroll', (ev) => {
+                let sY = Number(window.scrollY) || 0;
+
+                header.style.opacity = Math.max(0.8, Math.min(1, 1 - sY / 100));
+                if (header.style.opacity >= 1.0) {
+                    header.style.opacity = 1;
+                }
+
+                if (sY <= lastSy) {
+                    header.style.opacity = 1
+                }
+            });
+
+            header.addEventListener('click', (ev) => {
+                header.style.opacity = 1;
+            });
+
+            header.addEventListener('mouseover', (ev) => {
+                header.style.opacity = 1;
+            });
+        });
+    </script>
 </head>
 <body>
     <template id="project-show-template-public-src">
@@ -39,31 +74,35 @@
     </template>
 
     <header>
-        <div class="fill"></div>
         <nav>
             <h1>Zota0</h1>
             <ul>
                 <li><a href="#who">Who am I?</a></li>
                 <li><a href="#life_road">Life Road</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="./blog/index.html">Blog</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><a class="blog" href="./blog/index.html">Blog</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section id="who">
-            <h2>Who am I?</h2>
-            <p>
-                I'm a developer from Poland.
-                Interested in everything related to development, from web applications
-                to embedded, mobile and desktop software, including games.
-                <a href="#projects">See My Projects</a>, 
-                <a href="#skills">My Skills</a> or you can also
-                read my <a href="./blog/index.html">Blog</a>.
-            </p>
+            <div>
+                <img src="https://avatars.githubusercontent.com/u/77154534?v=4" alt="Zota0">
+            </div>
+            <div>
+                <h2>Who am I?</h2>
+                <p>
+                    I'm a developer from Poland.
+                    Interested in everything related to development, from web applications
+                    to embedded, mobile and desktop software, including games.
+                    <a href="#projects">See My Projects</a>, 
+                    <a href="#skills">My Skills</a> or you can also
+                    read my <a href="./blog/">Blog</a>.
+                </p>
+            </div>
         </section>
 
         <section id="life_road">
@@ -73,15 +112,16 @@
 
         <section id="projects">
             <h2>Projects</h2>
-            <div>
-                <project
-                    type="private-src"
-                    src="images/projects/pe"
-                    title="pe"
-                    desc="pe is a simple, fast and lightweight PE file parser written in C."
-                    demo="https://zota0.github.io/pe/"
-                ></project>
-            </div>
+            
+            <my-project
+                type="private-src"
+                src=""
+                title="pe"
+                desc="pe is a simple, fast and lightweight PE file parser written in C."
+                demo="https://zota0.github.io/pe/"
+                width="200"
+                height="200"
+            ></my-project>
         </section>
 
         <section id="skills">
@@ -219,23 +259,42 @@
     <footer>
         <hr>
         <div>
-            <ul>
-                <li><a href="https://twitter.com/Zota0">Twitter</a></li>
-                <li><a href="https://github.com/Zota0">GitHub</a></li>
-                <li><a href="https://www.linkedin.com/in/zota0/">LinkedIn</a></li>
-            </ul>
-            <ul>
-                <li><a href="#who">Who am I?</a></li>
-                <li><a href="#life_road">Life Road</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="./blog/index.html">Blog</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
+        <ul>
+            <li class="icon-twitter">
+                <a href="https://twitter.com/Zota0">
+                    <i class="fa-brands fa-x-twitter">
+                        Twitter (X)
+                    </i>
+                </a>
+            </li>
+            <li class="icon-github">
+                <a href="https://github.com/Zota0">
+                    <i class="fa fa-brands fa-github">
+                        GitHub
+                    </i>
+                </a>
+            </li>
+            <li class="icon-linkedin">
+                <a href="https://www.linkedin.com/in/zota0/">
+                    <i class="fa fa-brands fa-linkedin">
+                        LinkedIn
+                    </i>
+                </a>
+            </li>
+        </ul>
+        <ul>
+            <li><a href="#who">Who am I?</a></li>
+            <li><a href="#life_road">Life Road</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="./blog/index.html">Blog</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <p id="copyright"></p>
         <script>
-            document.writeln(`<p>© ${new Date().getFullYear()} Zota0</p>`);
+            document.getElementById('copyright').innerHTML = (`© ${new Date().getFullYear()} Zota0<`);
         </script>
+        </div>
     </footer>
 </body>
 </html>
